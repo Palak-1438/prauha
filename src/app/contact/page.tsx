@@ -76,7 +76,7 @@ export default function Contact() {
             <div>
               <p className="font-medium">Email Me Directly</p>
               <a href="mailto:palakdusiya@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                palakdusiya@example.com
+                palakdusiya@gmail.com
               </a>
             </div>
           </div>
