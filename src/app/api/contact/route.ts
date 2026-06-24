@@ -35,7 +35,7 @@ ${description}
     if (error) {
       console.error("Resend API error:", error)
       return NextResponse.json(
-        { success: false, message: "Failed to send email via provider. Please try again." },
+        { success: false, message: `Failed to send email via provider: ${error.message}` },
         { status: 500 }
       )
     }
