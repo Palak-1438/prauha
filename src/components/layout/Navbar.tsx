@@ -27,7 +27,7 @@ export function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Prauha</span>
-            <Logo className="h-10 w-auto sm:h-12" />
+            <Logo className="h-20 w-auto sm:h-24 scale-150 transform origin-left" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -62,7 +62,7 @@ export function Navbar() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Prauha</span>
-                <Logo className="h-10 w-auto" />
+                <Logo className="h-20 w-auto scale-150 transform origin-left" />
               </Link>
               <Button variant="ghost" className="-m-2.5 rounded-md p-2.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
