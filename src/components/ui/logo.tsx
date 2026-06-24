@@ -5,19 +5,9 @@ export function Logo({ className, ...props }: React.SVGProps<SVGSVGElement>) {
     <svg className={className} viewBox="0 0 440 380" xmlns="http://www.w3.org/2000/svg" {...props}>
       <style>
         {`
-          /* ===== DEFAULT (LIGHT) THEME ===== */
-          .badge-bg { fill: #f4f1ea; }
-          .word, .dot, .tagline-text { fill: #161513; }
-
-          /* ===== DARK THEME OVERRIDE ===== */
-          :root.dark .badge-bg, .dark .badge-bg { fill: #161513 !important; }
-          :root.dark .word, :root.dark .dot, :root.dark .tagline-text,
-          .dark .word, .dark .dot, .dark .tagline-text { fill: #ece7df !important; }
-
-          @media (prefers-color-scheme: dark) {
-            .badge-bg { fill: #161513; }
-            .word, .dot, .tagline-text { fill: #ece7df; }
-          }
+          /* ===== THEME ADAPTATION ===== */
+          .badge-bg { fill: transparent; }
+          .word, .dot, .tagline-text { fill: hsl(var(--foreground)); }
 
           /* ===== ANIMATIONS ===== */
           .badge-bg {
