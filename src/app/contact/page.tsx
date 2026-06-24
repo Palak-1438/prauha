@@ -47,14 +47,20 @@ export default function Contact() {
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form")
+      const responseData = await response.json()
+
+      if (!response.ok || !responseData.success) {
+        throw new Error(responseData.message || "Failed to submit form")
       }
 
       setIsSuccess(true)
       reset()
-    } catch {
-      setError("Something went wrong. Please try again later.")
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message)
+      } else {
+        setError("Something went wrong. Please try again later.")
+      }
     } finally {
       setIsSubmitting(false)
     }
@@ -75,7 +81,7 @@ export default function Contact() {
             </div>
             <div>
               <p className="font-medium">Email Me Directly</p>
-              <a href="mailto:palakdusiya@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:palakdusiya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 palakdusiya@gmail.com
               </a>
             </div>
