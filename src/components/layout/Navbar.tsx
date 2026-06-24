@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Menu, Moon, Sun, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { Logo } from "@/components/ui/logo"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -21,11 +22,12 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="text-xl font-bold tracking-tight">Prauha.</span>
+            <span className="sr-only">Prauha</span>
+            <Logo className="h-20 w-auto sm:h-24 scale-150 transform origin-left" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -59,7 +61,8 @@ export function Navbar() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="text-xl font-bold tracking-tight">Prauha.</span>
+                <span className="sr-only">Prauha</span>
+                <Logo className="h-20 w-auto scale-150 transform origin-left" />
               </Link>
               <Button variant="ghost" className="-m-2.5 rounded-md p-2.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
